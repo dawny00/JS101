@@ -1,13 +1,19 @@
 const readline = require('readline-sync');
 
-console.log('Welcome to The Calculator! 🤓');
+function prompt(message) {
+  console.log(`=> ${message}`);
+}
 
-const number1 = readline.question('What is the first number?\n');
+prompt('Welcome to The Calculator! 🤓\n');
 
-const number2 = readline.question('What is the second number?\n');
+prompt('What is the first number?');
+const number1 = readline.question();
 
-// Ask the user which operation they want to perform (+, -, /, *)
-const operation = readline.question('What operation would you like to perform on these numbers?\n 1) Add ➕\n 2) Subtract ➖\n 3) Divide ➗\n 4) Multiply ✖️\n');
+prompt('What is the second number?');
+const number2 = readline.question();
+
+prompt('What operation would you like to perform on these numbers? Enter 1, 2, 3, or 4.\n 1) Add ➕\n 2) Subtract ➖\n 3) Divide ➗\n 4) Multiply ✖️');
+const operation = readline.question();
 
 // Perform the operation
 let result;
@@ -21,5 +27,4 @@ if (operation === '1') {
   result = Number(number1) * Number(number2);
 }
 
-// Display the operation result
 console.log(`The result is ${result}`);
