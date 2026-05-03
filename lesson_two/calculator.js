@@ -17,14 +17,19 @@ const operation = readline.question();
 
 // Perform the operation
 let result;
-if (operation === '1') {
+switch (operation) {
+  case '1':
   result = Number(number1) + Number(number2);
-} else if (operation === '2') {
+  break;
+  case '2':
   result = Number(number1) - Number(number2);
-} else if (operation === '3') {
+  break;
+  case '3':
   result = Number(number1) / Number(number2);
-} else if (operation === '4') {
+  break;
+  case '4':
   result = Number(number1) * Number(number2);
+  break;
 }
 
 console.log(`The result is ${result}`);
