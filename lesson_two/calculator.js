@@ -4,32 +4,46 @@ function prompt(message) {
   console.log(`=> ${message}`);
 }
 
-prompt('Welcome to The Calculator! 🤓\n');
-
-prompt('What is the first number?');
-const number1 = readline.question();
-
-prompt('What is the second number?');
-const number2 = readline.question();
-
-prompt('What operation would you like to perform on these numbers? Enter 1, 2, 3, or 4.\n 1) Add ➕\n 2) Subtract ➖\n 3) Divide ➗\n 4) Multiply ✖️');
-const operation = readline.question();
-
-// Perform the operation
-let result;
-switch (operation) {
-  case '1':
-  result = Number(number1) + Number(number2);
-  break;
-  case '2':
-  result = Number(number1) - Number(number2);
-  break;
-  case '3':
-  result = Number(number1) / Number(number2);
-  break;
-  case '4':
-  result = Number(number1) * Number(number2);
-  break;
+function calculate(num1, num2, operation) {
+  switch (operation) {
+    case '1':
+      return num1 + num2;
+    case '2':
+      return num1 - num2;
+    case '3':
+      return num1 / num2;
+    case '4':
+      return num1 * num2;
+    default:
+      return null;
+  }
 }
 
-console.log(`The result is ${result}`);
+prompt('Welcome to The Calculator! 🤓\n');
+let additionalCalculation;
+
+do {
+  // Gather input
+  prompt('What is the first number?');
+  let num1 = Number(readline.question());
+
+  prompt('What is the second number?');
+  let num2 = Number(readline.question());
+
+  prompt('What operation would you like to perform on these numbers? Enter 1, 2, 3, or 4.\n 1) Add ➕\n 2) Subtract ➖\n 3) Divide ➗\n 4) Multiply ✖️');
+  let operation = readline.question();
+
+  // Perform the operation
+  let result = calculate(num1, num2, operation);
+
+  if (result === null) {
+    prompt('That is not a valid operation.');
+  } else {
+    console.log(`The result is ${result}`);
+  }
+
+  // Optionally perform another operation
+  prompt('Would you like to perform another calculation? Y or N');
+  additionalCalculation = readline.question().trim().toUpperCase();
+
+} while (additionalCalculation[0] === "Y");
