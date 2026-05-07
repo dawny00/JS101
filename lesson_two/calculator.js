@@ -1,8 +1,16 @@
+const MESSAGES = require('./calculator_messages.json');
 const readline = require('readline-sync');
+
+/*
+
+Commenting out for now.
+Will revisit in a future improvement with additional number validation.
 
 function invalidNumber(number) {
   return number.trimStart() === '' || Number.isNaN(Number(number));
 }
+
+*/
 
 function prompt(message) {
   console.log(`=> ${message}`);
@@ -23,31 +31,31 @@ function calculate(num1, num2, operation) {
   }
 }
 
-prompt('Welcome to The Calculator! 🤓\n');
+prompt(MESSAGES.welcome);
 let additionalCalculation;
 
 do {
   // Gather input
-  prompt('What is the first number?');
-  let num1 = Number(readline.question());
+  prompt(MESSAGES.number1);
+  const num1 = Number(readline.question());
 
-  prompt('What is the second number?');
-  let num2 = Number(readline.question());
+  prompt(MESSAGES.number2);
+  const num2 = Number(readline.question());
 
-  prompt('What operation would you like to perform on these numbers? Enter 1, 2, 3, or 4.\n 1) Add ➕\n 2) Subtract ➖\n 3) Divide ➗\n 4) Multiply ✖️');
-  let operation = readline.question();
+  prompt(MESSAGES.operation);
+  const operation = readline.question();
 
   // Perform the operation
-  let result = calculate(num1, num2, operation);
+  const result = calculate(num1, num2, operation);
 
   if (result === null) {
-    prompt('That is not a valid operation.');
+    prompt(MESSAGES.invalid);
   } else {
-    console.log(`The result is ${result}`);
+    prompt(`${MESSAGES.results} ${result}`);
   }
 
   // Optionally perform another operation
-  prompt('Would you like to perform another calculation? Y or N');
+  prompt(MESSAGES.anotherOperation);
   additionalCalculation = readline.question().trim().toUpperCase();
 
 } while (additionalCalculation[0] === "Y");
