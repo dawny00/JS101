@@ -1,9 +1,30 @@
 {
-  "welcome": "Welcome to The Calculator! 🤓\n",
-  "number1": "What is the first number?",
-  "number2": "What is the second number?",
-  "operation": "What operation would you like to perform on these numbers? Enter 1, 2, 3, or 4.\n 1) Add ➕\n 2) Subtract ➖\n 3) Divide ➗\n 4) Multiply ✖️",
-  "invalid": "That is not a valid operation.",
-  "anotherOperation": "Would you like to perform another calculation? Y or N",
-  "results": "The result is"
+  "english": {
+      "language": "What language would you like to continue in? Enter English, Spanish, or French.",
+      "welcome": "Welcome to The Calculator! 🤓\n",
+      "number1": "What is the first number?",
+      "number2": "What is the second number?",
+      "operation": "What operation would you like to perform on these numbers? Enter 1, 2, 3, or 4.\n 1) Add ➕\n 2) Subtract ➖\n 3) Divide ➗\n 4) Multiply ✖️",
+      "invalid": "That is not a valid operation.",
+      "anotherOperation": "Would you like to perform another calculation? Y or N",
+      "results": "The result is"
+  },
+  "spanish": {
+      "welcome": "¡Bienvenido a La Calculadora! 🤓\n",
+      "number1": "¿Cuál es el primer número?",
+      "number2": "¿Cuál es el segundo número?",
+      "operation": "¿Qué operación te gustaría realizar con estos números? Ingresa 1, 2, 3 o 4.\n 1) Sumar ➕\n 2) Restar ➖\n 3) Dividir ➗\n 4) Multiplicar ✖️",
+      "invalid": "Esa no es una operación válida.",
+      "anotherOperation": "¿Te gustaría realizar otro cálculo? Y o N",
+      "results": "El resultado es"
+  },
+  "french": {
+      "welcome": "Bienvenue sur La Calculatrice ! 🤓\n",
+      "number1": "Quel est le premier nombre ?",
+      "number2": "Quel est le deuxième nombre ?",
+      "operation": "Quelle opération souhaitez-vous effectuer avec ces nombres ? Entrez 1, 2, 3 ou 4.\n 1) Additionner ➕\n 2) Soustraire ➖\n 3) Diviser ➗\n 4) Multiplier ✖️",
+      "invalid": "Ce n'est pas une opération valide.",
+      "anotherOperation": "Voulez-vous effectuer un autre calcul ? Y ou N",
+      "results": "Le résultat est"
+  }
 }
