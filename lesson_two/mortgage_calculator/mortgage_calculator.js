@@ -9,21 +9,21 @@ while (true) {
   let loanAmount = Number(readline.question());
   while (invalidNumber(loanAmount)) {
     prompt('Must enter a valid positive number.');
-    loanAmount = readline.question();
+    loanAmount = Number(readline.question());
   }
 
   prompt('Enter the APR of your loan. e.g., enter 5 for 5%');
   let apr = Number(readline.question());
   while (invalidNumber(apr)) {
     prompt('Must enter a valid positive APR.');
-    apr = readline.question();
+    apr = Number(readline.question());
   }
 
   prompt('Enter the total loan duration in years. e.g., 30 or 5');
-  let loanDurationYears = Number(readline.question())
+  let loanDurationYears = Number(readline.question());
   while (invalidNumber(loanDurationYears)) {
     prompt('Must enter a valid positive number.');
-    loanDurationYears = readline.question();
+    loanDurationYears = Number(readline.question());
   }
 
   // Perform conversions and calculations
@@ -36,10 +36,10 @@ while (true) {
   );
 
   // Log the result
-  prompt(monthlyPayment);
+  prompt(formatCurrency(monthlyPayment));
 
   // Optionally perform another calculation
-  prompt('Would you like to perform another calculation?');
+  prompt('Would you like to perform another calculation? Enter Y or N.');
   additionalCalculation = readline.question().trim().toLowerCase();
   while (additionalCalculation[0] !== 'y' && additionalCalculation[0] !== 'n') {
     prompt('Please enter Y for yes or N for no.');
@@ -72,7 +72,11 @@ function calculateMonthlyPayment(
   let rateFactor = Math.pow((1 + monthlyInterestRate), (-loanDurationMonths));
   let monthlyPayment = loanAmount * (monthlyInterestRate / (1 - rateFactor));
 
-  return `$${monthlyPayment.toFixed(2)}`;
+  return monthlyPayment;
+}
+
+function formatCurrency(number) {
+  return `$${number.toFixed(2)}`;
 }
 
 function invalidNumber(number) {
