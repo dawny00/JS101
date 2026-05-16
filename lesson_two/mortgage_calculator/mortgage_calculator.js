@@ -36,10 +36,10 @@ while (true) {
   );
 
   // Log the result
-  prompt(monthlyPayment);
+  prompt(formatCurrency(monthlyPayment));
 
   // Optionally perform another calculation
-  prompt('Would you like to perform another calculation?');
+  prompt('Would you like to perform another calculation? Enter Y or N.');
   additionalCalculation = readline.question().trim().toLowerCase();
   while (additionalCalculation[0] !== 'y' && additionalCalculation[0] !== 'n') {
     prompt('Please enter Y for yes or N for no.');
@@ -72,7 +72,11 @@ function calculateMonthlyPayment(
   let rateFactor = Math.pow((1 + monthlyInterestRate), (-loanDurationMonths));
   let monthlyPayment = loanAmount * (monthlyInterestRate / (1 - rateFactor));
 
-  return `$${monthlyPayment.toFixed(2)}`;
+  return monthlyPayment;
+}
+
+function formatCurrency(number) {
+  return `$${number.toFixed(2)}`;
 }
 
 function invalidNumber(number) {
