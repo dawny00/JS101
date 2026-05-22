@@ -7,6 +7,7 @@ while (true) {
   // Gather input
   prompt('Enter the total loan amount. e.g., 300000 or 25000');
   let loanAmount = Number(readline.question());
+
   while (invalidNumber(loanAmount)) {
     prompt('Must enter a valid positive number.');
     loanAmount = Number(readline.question());
@@ -14,6 +15,7 @@ while (true) {
 
   prompt('Enter the APR of your loan. e.g., enter 5 for 5%');
   let apr = Number(readline.question());
+
   while (invalidNumber(apr)) {
     prompt('Must enter a valid positive APR.');
     apr = Number(readline.question());
@@ -21,6 +23,7 @@ while (true) {
 
   prompt('Enter the total loan duration in years. e.g., 30 or 5');
   let loanDurationYears = Number(readline.question());
+
   while (invalidNumber(loanDurationYears)) {
     prompt('Must enter a valid positive number.');
     loanDurationYears = Number(readline.question());
@@ -41,6 +44,7 @@ while (true) {
   // Optionally perform another calculation
   prompt('Would you like to perform another calculation? Enter Y or N.');
   additionalCalculation = readline.question().trim().toLowerCase();
+
   while (additionalCalculation[0] !== 'y' && additionalCalculation[0] !== 'n') {
     prompt('Please enter Y for yes or N for no.');
     additionalCalculation = readline.question().trim().toLowerCase();
