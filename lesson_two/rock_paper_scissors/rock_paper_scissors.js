@@ -19,7 +19,8 @@ function displayWinner(choice, computerChoice) {
   }
 }
 
-while (true) {
+let answer;
+do {
   prompt('Welcome to rock, paper, scissors!');
   prompt(`Enter your choice: ${VALID_CHOICES.join(', ')}`);
   let choice = readline.question().toLowerCase();
@@ -36,12 +37,11 @@ while (true) {
   prompt(displayWinner(choice, computerChoice));
 
   prompt('Would you like to play again? (y/n)');
-  let answer = readline.question().toLowerCase();
+  answer = readline.question().toLowerCase();
 
   while (answer[0] !== 'y' && answer[0] !== 'n') {
     prompt('Please enter y to play again or n to quit the game.');
     answer = readline.question().toLowerCase();
   }
 
-  if (answer[0] !== 'y') break;
-}
+} while (answer[0] === 'y');
