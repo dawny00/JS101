@@ -5,17 +5,15 @@ function prompt(message) {
   console.log(`=> ${message}`);
 }
 
-function displayWinner(choice, computerChoice) {
+function determineWinner(choice, computerChoice) {
   if ((choice === 'rock' && computerChoice === 'scissors') ||
       (choice === 'scissors' && computerChoice === 'paper') ||
       (choice === 'paper' && computerChoice === 'rock')) {
     return 'You won!';
-  } else if ((computerChoice === 'rock' && choice === 'scissors') ||
-      (computerChoice === 'scissors' && choice === 'paper') ||
-      (computerChoice === 'paper' && choice === 'rock')) {
-    return 'Computer won!';
-  } else {
+  } else if (choice === computerChoice) {
     return "It's a tie!";
+  } else {
+    return 'Computer won!';
   }
 }
 
@@ -27,14 +25,14 @@ do {
 
   while (!VALID_CHOICES.includes(choice)) {
     prompt('That is not a valid choice. Please try again!');
-    choice = readline.question();
+    choice = readline.question().toLowerCase();
   }
 
   let randomIndex = Math.floor(Math.random() * VALID_CHOICES.length);
   let computerChoice = VALID_CHOICES[randomIndex];
 
   prompt(`You chose ${choice} and the computer chose ${computerChoice}.`);
-  prompt(displayWinner(choice, computerChoice));
+  prompt(determineWinner(choice, computerChoice));
 
   prompt('Would you like to play again? (y/n)');
   answer = readline.question().toLowerCase();
