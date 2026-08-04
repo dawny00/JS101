@@ -1,0 +1,11 @@
+Hi Ursula, thank you for submitting your solution!
+
+Your solution uses a while loop to iterate over a counter variable named i, and check if its odd to log it to the console. i is then incremented to keep the loop going. Using a while loop and remainder expression is a suitable solution for this problem.
+
+It's very close to the problem requirements but does not satisfy the inclusivity requirement of printing 99 to the console. The last value logged to the console is 97 as your loop uses less than 99 (i < 99) Your while loop condition should be changed to i <= 99 or i < 100 to ensure it handles the iteration for number 99.
+
+Your code is mostly readable but would benefit from a more descriptive iteration variable name, such as 'number'. Your code is also free of syntax errors, so great job on that. It is more complex than it truly needs to be, as it checks every value from 1 to 98. I would suggest experimenting with a for loop instead of a while loop since you know the number range. This can keep the initialization, condition, and increment together.
+
+for (let number = 1; number < 100; number += 2) {
+  console.log(number);
+}
