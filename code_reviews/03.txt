@@ -1,0 +1,15 @@
+Hi, Stephanie! Thank you for submitting your solution. Here's my code review:
+
+Overall, your solution has great effort. However, it does not quite satisfy the problem requirements. The provided LaunchSchool test comparisons all log false because the function returns sums that are too low.”
+
+Your code could be improved with more readable variable names. x and y can be hard to follow. For example, x could be maxValue and y could be number. Having readable variables allows your solution to be more easily understood.
+
+Your for loop is very close to solving the problem, but it's missing the inclusive logic. Right now it comapres your incremental number, y, to x, the function's input, and runs while y is less than x. Part of the solution is to include the function's input number. You'll want to edit your for loop comparsion to y <= to x.
+
+Your for loop also has repititive logic checking the remainder for both 3 and 5. You can consolidate this into a single condition that checks if either are true:
+
+if (y % 3 === 0 || y % 5 === 0) {
+  result += y;
+}
+
+Lastly, a minor note but the incremental condition has an extra space character: y ++ should be y++
