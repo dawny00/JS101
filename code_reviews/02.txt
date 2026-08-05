@@ -1,0 +1,9 @@
+Hi Vlad, thanks for submitting your solution!
+
+Your isLeapYear function meets the problem requirements and all test cases return the expected result. I like your use of the is_a_leap_year boolean variable to test for different inputs and update the variable accordingly. 
+
+Your code needs some readability improvements—both in variables and indent styles:
+
+is_a_leap_year should be renamed using camelCase to isALeapYear. This is the standard style for standard variables, such as this boolean. You also should be declaring this variable using a declaration keyword like let, which will allow the variable's value to be changed later on in the code. Without a delcaration keyword to indicate a variable's scope, you may run into unexpected behavior. 
+
+Your indenting is also not consistent. Note in your first if statement, there are 8 spaces on line 4. In your second if statement, there are 4 spaces on line 7. This is the correct indent usage, so your first and third if statement should be updated. The indentation of your return statement on line 12 is using 4 spaces and only needs 2.
